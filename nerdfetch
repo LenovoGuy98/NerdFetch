@@ -4,7 +4,7 @@
 
 ostype="$(uname)"
 
-version=8.3.1
+version=8.3.2
 font=nerd
 distrotype=none
 osi=""
@@ -24,7 +24,7 @@ case $1 in
 	pi=""
 	ui=""
 	ci=""
-        ipi="󰅶"
+        ipi="""
 
 	;;
 "-c")
@@ -34,7 +34,7 @@ case $1 in
 	pi=""
 	ui=""
 	ci=""
-        ipi="󰅶"
+        ipi="♥"
 
 	;;
 "-e")
@@ -337,9 +337,11 @@ if command -v expr 1>/dev/null; then
 fi
 
 ## Wireless IP 
-ip=`ip a|grep -i wlp3s0|cut -d ' ' -f 6|tail -1`
+#ip=`ip a|grep -i wlp3s0|cut -d ' ' -f 6|tail -1`
 
 
+#All Ip
+ip=`hostname -I| cut -d ' ' -f 1`
 
 ## DEFINE COLORS
 
